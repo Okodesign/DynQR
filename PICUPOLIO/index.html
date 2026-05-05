@@ -1,0 +1,19 @@
+<script>
+    // Obtenemos el "id" de la URL (ejemplo: ?id=1)
+    const params = new URLSearchParams(window.location.search);
+    const destino = params.get('id');
+
+    // Diccionario de destinos:
+    const links = {
+        "1": "https://www.google.com",
+        "2": "https://www.tu-web.com/menu.pdf",
+        "3": "https://instagram.com/tu-usuario"
+    };
+
+    // Si el ID existe en la lista, redirige. Si no, va a mieres.es
+    if (links[destino]) {
+        window.location.href = links[destino];
+    } else {
+        window.location.href = "https://www.mieres.es/";
+    }
+</script>
